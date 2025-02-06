@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CU$H</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<body>
+  <script src="script.js"></script>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">CU$H </div>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#docs">Docs</a></li>
+        <li><a href="#help">Help</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MainContainer -->
+  <div class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="log-in-container">
+        <span class="material-symbols-outlined">motion_mode</span>
+        <button class="logInbtn" id="loginBtn" onclick="popupFn()">Log In</button>
+<!--        <button class="sign-in-btn"><a href="signIn.html">Sign In</a></button>-->
+      </div>
+
+      <!-- Login Popup -->
+      <div id="loginPopup" class="popup">
+        <div class="popupContent">
+          <span class="close-btn" onclick="popupClFn()">&times;</span>
+          <h2>Sign In</h2>
+          <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit" onclick="popupSubmitFn()">Submit</button>
+          </form>
+        </div>
+      </div>
+      
+      <h3 id="transaction-type">Transaction Type</h3>
+      <ul class="menu">
+        <li>
+          <span class="material-symbols-outlined">payments</span>
+          <span class="menu-text" id="expenditure" onclick="expenditurePage()">Expenditures</span>
+<!--          <a class="menu-text" href="expendituresPage.html">Expenditures</a>-->
+        </li>
+        <li>
+          <span class="material-symbols-outlined">savings</span>
+          <span class="menu-text">Incomes</span>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">compare_arrows</span>
+          <span class="menu-text">Transfers</span>
+        </li>
+      </ul>
+
+      <h3 id="smart-lists">Smart Lists</h3>
+      <ul class="menu">
+        <li>
+          <span class="menu-text">✨ Daily ✨</span>
+        </li>
+      </ul>
+
+      <h3 id="date-ranges">Date Ranges</h3>
+      <ul class="menu">
+        <li><span class="menu-text">Today</span></li>
+        <li><span class="menu-text">Yesterday</span></li>
+        <li><span class="menu-text">Current Week</span></li>
+        <li><span class="menu-text">Last 30 Days</span></li>
+        <li><span class="menu-text">Current Month</span></li>
+        <li><span class="menu-text">Last Month</span></li>
+        <li><span class="menu-text">Last 3 Months</span></li>
+        <li><span class="menu-text">Current Year</span></li>
+        <li><span class="menu-text">Last Year</span></li>
+      </ul>
+
+      <h3 id="contact">Contact</h3>
+      <ul class="menu">
+        <li><span class="menuCon">(+1)123-456-7890</span></li>
+        <a class="menuCon" href="mailto:ju.li@norhteastern.edu?subject=CU$H">ju.li@norhteastern.edu</a>
+
+        <div class="hyperlinkCon">
+          <a class="hyperlink" href="https://github.com/linnnn102" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" style="width: 30px; height: 30px; vertical-align: middle;"></a>
+          <a class="hyperlink" href="https://www.linkedin.com/in/linju-79b2591a6/" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 30px; height: 30px; vertical-align: middle;"></a>
+        </div>
+      </ul>
+    </aside>
+    
+    <!-- Content Section -->
+    <section class="content">
+<!--      <article class="export-tip">-->
+<!--        Tap ⭕ to export data-->
+<!--      </article>-->
+      <div class="no-data">
+        <h1>No Data</h1>
+        <p>Choose 1 Transaction</p>
+      </div>
+    </section>
+
+    <!-- Article -->
+    <article class="aboutCush">
+      <!-- <h2>💡 Latest Updates</h2>
+      <p>We’ve recently added new features to make managing your transactions easier! 
+        Check out the new income tracker and automatic savings goals.</p> -->
+
+      <button class="closeArticle">&times;</button>
+      <h2>💡 About CU$H</h2>
+      <p>CU$H is a program which makes personal budgeting easy.<br>
+        Because it's a lot more efficient than traditional budgeting program,
+        you can either greatly decrease your time spent on it, or greatly increase insights you can generate.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h2>💡 New Features</h2>
+
+      <div class="featureGallery">
+        <figure class="features">
+          <img src="images/smartList.jpg" alt="New Smart List">
+          <figcaption>A smart list makes daily data easier to maintain</figcaption>
+        </figure>
+        <figure class="features">
+          <img src="images/nav.jpg" alt="New Smart List">
+          <figcaption>More functions in navigator</figcaption>
+        </figure>
+      </div>
+
+      <h2>⁉️ Need some motivation? Try this!</h2>
+      <video controls width="400" height="225">
+        <source src="video/video.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+    </article>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CU$H. All Rights Reserved.</p>
+  </footer>
+
+<!--<script>-->
+
+<!--</script>-->
+</body>
+
+</html>

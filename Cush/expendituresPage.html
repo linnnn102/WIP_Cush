@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monthly Expenditures</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <style>
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: 50px auto;
+    }
+    table, th, td {
+      border: 1px solid pink;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+    .datalistCon {
+      margin-top: 50px;
+      margin-left: 10px;
+    }
+    .summary-bar {
+      margin-top: 50px;
+      margin-left:10px;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <script src="script.js"></script>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">CU$H </div>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#docs">Docs</a></li>
+        <li><a href="#help">Help</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--  Datalist, Table, and Summary-->
+  <!-- Data List -->
+  <div class="datalistCon">
+    <label for="category">Choose a Primary:</label>
+    <input list="category-list" id="category" name="category">
+    <datalist id="category-list">
+      <option value="Restaurant">
+      <option value="Groceries">
+      <option value="Rent">
+      <option value="Utilities">
+      <option value="Transportation">
+      <option value="Shopping">
+      <option value="Miscellaneous">
+    </datalist>
+  </div>
+
+
+  <!-- Data Summary-->
+  <div class="summary-bar" id="summary-bar">
+    <span>Monthly Total:</span>
+    <label id="output"></label>
+  </div>
+
+  <!-- Table -->
+  <table class="dataTable">
+    <thead>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Primary</th>
+      <th>Expenditure Amount</th>
+      <th>Payment Method</th>
+    </tr>
+    </thead>
+    <tbody class="dataTable_b">
+    <tr>
+      <td>Jan 8</td>
+      <td>1:30 PM</td>
+      <td>Groceries</td>
+      <td class="amount">50.00</td>
+      <td>Debit Card: 2413</td>
+    </tr>
+    <tr>
+      <td>Jan 9</td>
+      <td>8:20 AM</td>
+      <td>Transportation</td>
+      <td class="amount">2.40</td>
+      <td>Credit Card: 9180</td>
+    </tr>
+    <tr>
+      <td>Jan 9</td>
+      <td>1:02 PM</td>
+      <td>Restaurant</td>
+      <td class="amount">16.05</td>
+      <td>Credit Card: 9180</td>
+    </tr>
+    <tr>
+      <td>Jan 9</td>
+      <td>1:02 PM</td>
+      <td>Miscellaneous</td>
+      <td class="amount">10.69</td>
+      <td>Credit Card: 9180</td>
+    </tr>
+    <tr>
+      <td>Jan 9</td>
+      <td>8:02 PM</td>
+      <td>Transportation</td>
+      <td class="amount">2.40</td>
+      <td>Credit Card: 9180</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CU$H. All Rights Reserved.</p>
+  </footer>
+
+
+  <script>
+    function updateSummary() {
+      const rows = document.querySelectorAll('.dataTable_b .amount');
+      let total = 0;
+
+      // Loop through table rows and sum up the prices
+      rows.forEach(row => {
+        total += parseFloat(row.textContent);
+      });
+
+      // Display the total in the summary bar
+      const summaryBar = document.getElementById('output');
+      summaryBar.textContent = `$${total.toFixed(2)}`; // Fixed to two decimal places
+    }
+
+    // Call the function to update the summary
+    updateSummary();
+  </script>
+
+</body>
+</html>

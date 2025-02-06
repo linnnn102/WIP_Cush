@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotating and Expanding Circle</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #2a2a2a;
+    }
+    /*.logo {*/
+    /*  position: absolute;*/
+    /*  top: 20px;*/
+    /*  left: 20px;*/
+    /*  width: 50px;*/
+    /*  height: auto;*/
+    /*  z-index: 10; */
+    /*}*/
+    .box {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background-color: deeppink;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .box:hover {
+      background-color: #121212;
+    }
+    .box-text {
+      color: dimgrey;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-style: italic;
+      text-decoration: underline;
+      pointer-events: none;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!--<img src="images/favicon.jpeg" alt="Logo" class="logo">-->
+
+<div class="box"></div>
+<div class="box-text">Start with CU$H</div>
+
+<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
